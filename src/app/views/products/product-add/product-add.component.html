@@ -1,0 +1,78 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Add new Product</h1>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns-->
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="addForm" (submit)="onSubmit()">
+                <div class="form-group">
+                    <label for="productName">Name</label>
+                    <input formControlName="name" id="productName" name="productName" class="form-control" 
+                    placeholder="Name" [ngClass]="{' is-invalid': submitted && f.name.errors}">
+                        
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea formControlName="description" rows="6" id="productDescription" name="productDescription" class="form-control" placeholder="description"><textarea></textarea>
+                </div>  
+                <!-- <div class="form-group">
+                    <label for="productImage">Image</label>
+                    <input type="file" id ="image" (change)="onSelectedFile($event)" accept="image/*">
+                </div> -->
+                <img  [src]="imageUrl" style="width:200px;height:200px">
+                <!-- <img [src]="imageUrl("uploads/images/")'+'/'+''+imageUrl+'" height="50" width="50"> -->
+                <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+                <!-- <div class="form-group">
+                    <label for="exampleInputaddress">Image</label>
+                    <input type="file" name="profile" (change)="onFileChange($event)" class="form-control" id="exampleInputarea"
+                    placeholder="Enter Image" >
+                    </div>  -->
+
+
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input formControlName="price" id="productPrice" name="productPrice" class="form-control" placeholder="price">
+                </div>  
+                <div class="form-group">
+                    <label for="productquantity">quantity</label>
+                    <input formControlName="quantity" id="productquantity" name="productquantity" class="form-control" placeholder="quantity">
+                </div>
+                <div class="form-group">
+                    <label for="productIs_new">is_new</label>
+                    <input formControlName="is_new" id="productIs_new" name="productIs_new" class="form-control" placeholder="is_new">
+                </div>
+      
+                
+                   
+               
+                <!-- <div class="form-group">
+                    <label for="courseUser_id">User_id</label>
+                    <input formControlName="user_id" id="courseUser_id" name="courseUser_id" class="form-control" placeholder="User_id">
+                </div> 
+                    <div class="form-group">
+                    <label for="courseCategory_id">Category_id</label>
+                    <input formControlName="category_id" id="courseCategory_id" name="courseCategory_id" class="form-control" placeholder="Category_id">
+                </div>    -->
+                <button type="submit" class="btn btn-primary" [disabled]="Image.value==''">Save</button>
+            
+            
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input type="file" #fileupload [(ngModel)]="filedata" name="myFile" (change)="fileEvent($event)"/>
+    <button>Upload Image</button>
+    </form>  -->

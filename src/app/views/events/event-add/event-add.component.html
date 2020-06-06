@@ -1,0 +1,61 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Add new Event</h1>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns-->
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="addForm" (submit)="onSubmit()">
+                <div class="form-group">
+                    <label for="eventName">Title</label>
+                    <input formControlName="title" id="eventName" name="eventName" class="form-control" 
+                    placeholder="Title" [ngClass]="{' is-invalid': submitted && f.name.errors}">
+                        
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Title is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea formControlName="description" rows="6" id="eventDescription" name="eventDescription" class="form-control" placeholder="description"><textarea></textarea>
+                </div>  
+
+                <div class="form-group">
+                    <label for="eventAddress">Address</label>
+                    <input formControlName="address" id="eventAddress" name="eventAddress" class="form-control" placeholder="address">
+                </div>  
+                <div class="form-group">
+                    <label for="event_time">Event_time</label>
+                    <input formControlName="event_time" id="event_time" type="date" name="event_time" class="form-control" placeholder="event_time">
+                </div>
+                <div class="form-group">
+                    <label for="eventDuration">Duration</label>
+                    <input formControlName="duration" id="eventDuration" name="eventDuration" class="form-control" placeholder="duration">
+                </div>
+                <div class="form-group">
+                    <label for="eventNum_attendees">num_attendees</label>
+                    <input formControlName="num_attendees" id="eventNum_attendees" name="eventNum_attendees" class="form-control" placeholder="num_attendees">
+                </div> 
+      
+                
+                   
+               
+                <!-- <div class="form-group">
+                    <label for="courseUser_id">User_id</label>
+                    <input formControlName="user_id" id="courseUser_id" name="courseUser_id" class="form-control" placeholder="User_id">
+                </div> 
+                    <div class="form-group">
+                    <label for="courseCategory_id">Category_id</label>
+                    <input formControlName="category_id" id="courseCategory_id" name="courseCategory_id" class="form-control" placeholder="Category_id">
+                </div>    -->
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

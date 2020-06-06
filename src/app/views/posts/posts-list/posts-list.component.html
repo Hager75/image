@@ -1,0 +1,38 @@
+<!-- <p>posts-list works!</p> -->
+<div class="col-md-6 text-right mt-3">
+  <a href="javascript:;"  class="btn btn-primary" [routerLink]="['../new']"><i class="fa fa-plus fa-lg"></i></a>
+
+</div>
+<!-- =============================================================================== -->
+<div class="container">
+<div class="row">
+    <div class="col-md-6" *ngFor="let post of posts" style="margin-top:10px;">
+        <header>
+            <h4>{{post.title}}</h4>
+        </header>
+        <div>
+            <p>
+                {{post.content}}
+                {{post.id}}
+            </p>
+            <!-- <p>{{post.created_at}}</p> -->
+            <!-- <p><img style="height:100%; width: 100%;" src="{{ post.image }}" /></p> -->
+        </div>
+        <div >
+            <router-outlet></router-outlet>
+          </div>
+        <button class="btn btn-danger" (click)="deleteItem(post.id)">Delete</button>
+        <button class="btn btn-success" [routerLink]="['../edit',post.id]">Update</button>
+        <hr>
+    </div>
+</div>
+</div>
+<!-- =========================================================================== -->
+<div class="container">
+<div class="row justify-content-center" id ="btn">
+    <button (click) ="firstPage()" > First</button>
+    <button (click) ="previousPage()"> Previous</button>
+    <button (click) ="nextPage()" > Next</button>
+    <button (click) ="lastPage()" > Last</button>
+</div>
+</div>
