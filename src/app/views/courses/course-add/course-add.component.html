@@ -1,0 +1,65 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Add new Course</h1>
+    </div>
+</div>
+<form [formGroup]="addForm" (submit)="onSubmit()">
+
+<div class="container">
+    <!-- Example row of columns-->
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="addForm" (submit)="onSubmit()">
+                <div class="form-group">
+                    <label for="courseName">Name</label>
+                    <input formControlName="name" id="courseName" name="courseName" class="form-control" 
+                    placeholder="Name" [ngClass]="{' is-invalid': submitted && f.name.errors}">
+                        
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="courseDuration">Duration</label>
+                    <input formControlName="duration" id="courseDuration" name="courseDuration" class="form-control" placeholder="duration">
+                </div>
+                <div class="form-group">
+                    <label for="courseStart_date">Start_date</label>
+                    <input formControlName="start_date" type="date" id="courseStart_date" name="courseStart_date" class="form-control" placeholder="start_date">
+                </div>
+                <div class="form-group">
+                    <label for="courseEnd_date">End_date</label>
+                    <input formControlName="end_date" type="date" id="courseEnd_date" name="courseEnd_date" class="form-control" placeholder="end_date">
+                </div>
+                <div class="form-group">
+                    <label for="courseGroup_limit">Group_limit</label>
+                    <input formControlName="group_limit" id="courseGroup_limit" name="courseGroup_limit" class="form-control" placeholder="group_limit">
+                </div>
+                <div class="form-group">
+                    <label for="courseDescription">Description</label>
+                    <textarea formControlName="description" rows="6" id="courseDescription" name="courseDescription" class="form-control" placeholder="description"><textarea></textarea>
+                </div>   
+                <div class="form-group">
+                    <label for="courseInstructor_name">Instructor_name</label>
+                    <input formControlName="instructor_name" id="courseInstructor_name" name="courseInstructor_name" class="form-control" placeholder="instructor_name">
+                </div>        
+                <div class="form-group">
+                    <label for="coursePrice">Price</label>
+                    <input formControlName="price" id="coursePrice" name="coursePrice" class="form-control" placeholder="price">
+                </div>    
+                <!-- <div class="form-group">
+                    <label for="courseUser_id">User_id</label>
+                    <input formControlName="user_id" id="courseUser_id" name="courseUser_id" class="form-control" placeholder="User_id">
+                </div> 
+                    <div class="form-group">
+                    <label for="courseCategory_id">Category_id</label>
+                    <input formControlName="category_id" id="courseCategory_id" name="courseCategory_id" class="form-control" placeholder="Category_id">
+                </div>    -->
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Edit Course</h1>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns-->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <form [formGroup]="editForm" (submit)="onSubmit()">
+                 -->
+                 <form #editCourseForm="ngForm" (ngSubmit)="onSubmit(editCourseForm)">
+                <div class="form-group">
+                    <label for="categoryName">Name</label>
+                    
+                    <input id="categoryName" name="categoryName" class="form-control" 
+                    placeholder="Name" 
+                    [(ngModel)]="category.title"
+                    [ngClass]="{' is-invalid': submitted && f.name.errors}">
+                        
+                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                            <div *ngIf="f.title.errors.required">Title is required</div>
+                        </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

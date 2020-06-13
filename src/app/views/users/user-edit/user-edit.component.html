@@ -1,0 +1,85 @@
+
+<div class="card-header">
+    <h3 class="card-title">Update User</h3>
+</div>
+<form  (ngSubmit)="onSubmit()"  class="my-4"> 
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputaddress">Image</label>
+            <img width="50" height="50" src="{{user.avatar}}"/>
+
+        </div> 
+
+        <div class="row mb-3">
+            <div class="col input-group">
+                <input type="text" class="form-control" id="first_name"  autofocus
+                    placeholder="First Name" [(ngModel)]="user.first_name" name="first_name">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col input-group">
+                <input type="text" class="form-control" [(ngModel)]="user.last_name" id="last_name" type="text" 
+                    autofocus placeholder="Last Name" name="last_name">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">Email</label>
+            <input type="text" name="email" [(ngModel)]="user.email" class="form-control" id="exampleInputemail"
+                placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            Role
+            <select class="custom-select" [(ngModel)]="user.role" name="role">
+                <option value="0">user</option>
+                <option value="1">investor</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">Mobile</label>
+            <input type="text" name="mobile" [(ngModel)]="user.mobile" class="form-control" id="exampleInputMobile"
+                placeholder="Enter Mobile">
+        </div>
+       
+        <div class="form-group">
+            <label for="exampleInputaddress">latitude</label>
+            <input type="text" name="latitude" [(ngModel)]="user.place.latitude" class="form-control" id="exampleInputlatitude"
+                placeholder="Enter latitude">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">longitude</label>
+            <input type="text" name="longitude" [(ngModel)]="user.place.longitude" class="form-control" id="exampleInputlongitude"
+                placeholder="Enter longitude">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">address</label>
+            <input type="text" name="address" [(ngModel)]="user.place.address" class="form-control" id="exampleInputaddress"
+                placeholder="Enter address">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">National ID</label>
+            <input type="text" name="national_id" [(ngModel)]="user.national_id" class="form-control" id="exampleInputnational"
+                placeholder="Enter National_ID">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">Password</label>
+            <input type="password" name="password"  [(ngModel)]="user.password" class="form-control" id="exampleInputpassword"
+                placeholder="Enter password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputaddress">Password</label>
+            <input type="password" name="password_confirmation"  [(ngModel)]="user.password_confirmation" class="form-control" id="exampleInputpassword_confirmation"
+                placeholder="Enter password">
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>

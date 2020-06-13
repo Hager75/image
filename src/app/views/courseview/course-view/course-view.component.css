@@ -1,0 +1,8 @@
+.card-body .card-title a{
+    color: #888;
+    transition: 0.5s;
+}
+
+.card{
+    background: #fafafa;
+}
